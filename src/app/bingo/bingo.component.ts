@@ -19,6 +19,12 @@ export class BingoComponent implements OnInit {
 
   ngOnInit() {
     this.numbers = this.bingoService.getNumbers()
+    this.bingoService.getSorted().subscribe(
+      response => {
+        this.bingo = response.numbers
+        this.last = response.numbers[response.numbers.length - 1]
+      }
+    )
   }
 
   public sort() {

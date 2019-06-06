@@ -21,6 +21,10 @@ export class BingoService {
     return numbers;
   }
 
+  public getSorted(): Observable<any> {
+    return this.http.get<any>(this.url + 'sorted')
+  }
+
   public sort(): Observable<any> {
     return this.http.get<any>(this.url)
   }
