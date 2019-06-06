@@ -1,0 +1,44 @@
+<p-messages [(value)]="msgs"></p-messages>
+<div class="ui-g">
+  <div class="ui-g-6">
+    <div>
+      <p-button icon="pi pi-plus" label="Sortear" iconPos="left" (click)="sort()"></p-button>
+      &nbsp;
+      <p-button icon="pi pi-times" label="Limpar" iconPos="left" (click)="clear()" styleClass="ui-button-danger"></p-button>
+    </div>
+    <br/>
+    <div>
+      Último Valor Sorteado: <strong>{{ last }}</strong>
+    </div>
+  </div>
+  
+  <div class="ui-g-6">
+    <p-table [value]="numbers">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>B</th>
+              <th>I</th>
+              <th>N</th>
+              <th>G</th>
+              <th>O</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-n>
+          <tr>
+              <td [ngClass]="(bingo.includes(n.toString())) ? 'bingo' : null">{{ n }}</td>
+              <td [ngClass]="(bingo.includes((n + 15 * 1).toString())) ? 'bingo' : null">{{ n + 15 * 1 }}</td>
+              <td [ngClass]="(bingo.includes((n + 15 * 2).toString())) ? 'bingo' : null">{{ n + 15 * 2 }}</td>
+              <td [ngClass]="(bingo.includes((n + 15 * 3).toString())) ? 'bingo' : null">{{ n + 15 * 3 }}</td>
+              <td [ngClass]="(bingo.includes((n + 15 * 4).toString())) ? 'bingo' : null">{{ n + 15 * 4 }}</td>
+          </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<p-confirmDialog #cd header="Zerar o Jogo" icon="pi pi-exclamation-triangle">
+    <p-footer>
+        <button type="button" pButton icon="pi pi-times" label="Não" (click)="cd.reject()"></button>
+        <button type="button" pButton icon="pi pi-check" label="Sim" (click)="cd.accept()"></button>
+    </p-footer>
+</p-confirmDialog>
