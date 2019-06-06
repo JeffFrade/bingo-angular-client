@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BingoService } from '../bingo.service';
-import { nsend } from 'q';
 import { ConfirmationService } from 'primeng/components/common/confirmationservice';
 
 @Component({

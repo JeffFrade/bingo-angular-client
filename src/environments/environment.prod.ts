@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api_host: 'http://localhost:8000/api/'
+  api_host: 'http://bingo-laravel-api.herokuapp.com/api/'
 };

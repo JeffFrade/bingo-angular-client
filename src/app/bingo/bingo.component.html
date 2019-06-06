@@ -25,11 +25,11 @@
       </ng-template>
       <ng-template pTemplate="body" let-n>
           <tr>
-              <td [ngClass]="(bingo.includes(n.toString())) ? 'bingo' : null">{{ n }}</td>
-              <td [ngClass]="(bingo.includes((n + 15 * 1).toString())) ? 'bingo' : null">{{ n + 15 * 1 }}</td>
-              <td [ngClass]="(bingo.includes((n + 15 * 2).toString())) ? 'bingo' : null">{{ n + 15 * 2 }}</td>
-              <td [ngClass]="(bingo.includes((n + 15 * 3).toString())) ? 'bingo' : null">{{ n + 15 * 3 }}</td>
-              <td [ngClass]="(bingo.includes((n + 15 * 4).toString())) ? 'bingo' : null">{{ n + 15 * 4 }}</td>
+              <td [ngClass]="(bingo.includes(n)) ? 'bingo' : null">{{ n }}</td>
+              <td [ngClass]="(bingo.includes(n + 15 * 1)) ? 'bingo' : null">{{ n + 15 * 1 }}</td>
+              <td [ngClass]="(bingo.includes(n + 15 * 2)) ? 'bingo' : null">{{ n + 15 * 2 }}</td>
+              <td [ngClass]="(bingo.includes(n + 15 * 3)) ? 'bingo' : null">{{ n + 15 * 3 }}</td>
+              <td [ngClass]="(bingo.includes(n + 15 * 4)) ? 'bingo' : null">{{ n + 15 * 4 }}</td>
           </tr>
       </ng-template>
     </p-table>
